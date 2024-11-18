@@ -21,18 +21,23 @@ projects.
 
 To install `cryptjs` for your project, you can use either npm or yarn.
 
+### Using pnpm
+
+```bash
+pnpm install cryptjs
+```
+
 ### Using npm
 
 ```bash
 npm install cryptjs
 ```
 
-````
 ### Using yarn
 
 ```bash
 yarn add cryptjs
-````
+```
 
 ## Usage
 
@@ -49,66 +54,34 @@ const hash = sha512(message);
 console.log("SHA-512 Hash:", hash);
 ```
 
-### Example: AES Encryption and Decryption
-
-```javascript
-import { aesDecrypt, aesEncrypt } from "cryptjs";
-
-const key = "my-secret-key";
-const message = "Encrypt this message";
-
-// Encrypt
-const encrypted = aesEncrypt(message, key);
-console.log("Encrypted:", encrypted);
-
-// Decrypt
-const decrypted = aesDecrypt(encrypted, key);
-console.log("Decrypted:", decrypted);
-```
-
-### Example: Generating Random Values
+<!-- ### Example: Generating Random Values
 
 ```javascript
 import { generateRandomBytes } from "cryptjs";
 
 const randomBytes = generateRandomBytes(16); // Generate 16 random bytes
 console.log("Random Bytes:", randomBytes);
-```
+``` -->
 
 ## API Reference
 
 ### Hashing Functions
 
-- **sha256(data: string | Uint8Array): string** - Returns the SHA-256 hash of
-  the input data.
+<!-- - **sha256(data: string | Uint8Array): string** - Returns the SHA-256 hash of -->
+<!--   the input data. -->
+
 - **sha512(data: string | Uint8Array): string** - Returns the SHA-512 hash of
   the input data.
-- **md5(data: string | Uint8Array): string** - Returns the MD5 hash of the input
-  data.
-
-### Encryption/Decryption
-
-- **aesEncrypt(data: string | Uint8Array, key: string): string** - Encrypts data
-  using AES encryption.
-- **aesDecrypt(data: string | Uint8Array, key: string): string** - Decrypts
-  AES-encrypted data.
 
 ### Random Number Generation
 
-- **generateRandomBytes(length: number): Uint8Array** - Generates
-  cryptographically secure random bytes of the specified length.
-
-### Digital Signatures
-
-- **hmac(key: string | Uint8Array, data: string | Uint8Array): string** -
-  Generates a hash-based message authentication code (HMAC) using a key and
-  data.
+- **generateRandomBytes(length: number) (NOT-IMPLEMENTED YET): Uint8Array** -
+  Generates cryptographically secure random bytes of the specified length.
 
 ## Supported Algorithms
 
-- SHA-256, SHA-512, MD5
-- AES (Advanced Encryption Standard)
-- HMAC (Hash-based Message Authentication Code)
+- SHA-256.
+- SHA-512.
 
 ## Contributing
 
@@ -147,7 +120,7 @@ functions your library supports!
 
 ## TODO
 
-- [ ] generateSalt
+- [ ] make salt optional and generate salt
 - [ ] secure random and not secure random
 - [ ] tests use something like `jest`
 - [ ] add sha256
