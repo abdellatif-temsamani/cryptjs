@@ -1,0 +1,32 @@
+{
+    "name": "sha512",
+    "type": "module",
+    "version": "1.0.0",
+    "description": "dart:crypt-sha512 ported to js/ts",
+    "main": "src/index.js",
+    "keywords": [
+        "sha512",
+        "hash",
+        "cryptography",
+        "encryption",
+        "security",
+        "typescript",
+        "javascript",
+        "dart",
+        "crypto",
+        "hashing-algorithm",
+        "password-hashing",
+        "secure-hashing",
+        "sha",
+        "crypt-lib"
+    ],
+    "author": "Abdellatif Dev",
+    "license": "MIT",
+    "devDependencies": {
+        "@eslint/js": "^9.15.0",
+        "@types/node": "^22.9.0",
+        "eslint": "^9.15.0",
+        "eslint-plugin-simple-import-sort": "^12.1.1",
+        "globals": "^15.12.0"
+    }
+}
