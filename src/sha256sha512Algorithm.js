@@ -3,14 +3,16 @@ import { assert } from "node:console";
 import { hashBuffer, maxSaltLength, toUtf16Bytes } from "./utils.js";
 
 /**
+ * @param {import("./types.js").ShaType} algorithm
  * @param {string} key
- * @param {number} blockSize
+ * @param {32 | 64} blockSize
  * @param {number} rounds
  * @param {string} providedSalt
 
- * @returns {number[]}
+ * @returns {{ hashSeq:number[]; salt: string; }}
  */
 export default function sha256sha512Algorithm(
+    algorithm,
     key,
     blockSize,
     rounds,
@@ -41,7 +43,7 @@ export default function sha256sha512Algorithm(
         ...valueBytes, // Step 7
     ];
 
-    const altBytes = hashBuffer(Buffer.from(dataB));
+    const altBytes = hashBuffer(Buffer.from(dataB), algorithm);
 
     let count = key.length;
     while (blockSize <= count) {
@@ -60,7 +62,7 @@ export default function sha256sha512Algorithm(
         }
     }
 
-    const digestA = hashBuffer(Buffer.from(dataA));
+    const digestA = hashBuffer(Buffer.from(dataA), algorithm);
 
     /** @type {number[]} */
     const dataDP = []; // Step 13
@@ -69,7 +71,7 @@ export default function sha256sha512Algorithm(
         dataDP.push(...valueBytes); // Step 14
     }
 
-    const dpBytes = hashBuffer(Buffer.from(dataDP));
+    const dpBytes = hashBuffer(Buffer.from(dataDP), algorithm);
 
     /** @type {number[]} */
     const p = [];
@@ -90,7 +92,7 @@ export default function sha256sha512Algorithm(
     for (let x = 0; x < 16 + a0; x++) {
         dataDS.push(...saltBytes);
     }
-    const dsBytes = hashBuffer(Buffer.from(dataDS));
+    const dsBytes = hashBuffer(Buffer.from(dataDS), algorithm);
 
     /** @type {number[]} */
     const s = []; // Step 13
@@ -104,7 +106,7 @@ export default function sha256sha512Algorithm(
         s.push(...dsBytes.slice(0, count));
     }
 
-    let running = digestA;
+    let hashSeq = digestA;
     for (var r = 0; r < rounds; r++) {
         /** @type {number[]} */
         const dataC = [];
@@ -112,7 +114,7 @@ export default function sha256sha512Algorithm(
         if (r % 2 == 1) {
             dataC.push(...p);
         } else {
-            dataC.push(...running);
+            dataC.push(...hashSeq);
         }
 
         if (r % 3 != 0) {
@@ -123,12 +125,15 @@ export default function sha256sha512Algorithm(
         }
 
         if (r % 2 == 1) {
-            dataC.push(...running);
+            dataC.push(...hashSeq);
         } else {
             dataC.push(...p);
         }
-        running = hashBuffer(Buffer.from(dataC));
+        hashSeq = hashBuffer(Buffer.from(dataC), algorithm);
     }
 
-    return running;
+    return {
+        hashSeq,
+        salt,
+    };
 }

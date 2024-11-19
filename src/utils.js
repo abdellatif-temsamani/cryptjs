@@ -19,10 +19,17 @@ export function toUtf16Bytes(str) {
  * Converts a Buffer to an array of UTF-16 byte values (code units).
  *
  * @param {Buffer} data - The input string to convert.
+ * @param {import("./types.js").ShaType} algorithm
  * @returns {number[]} - An array of UTF-16 byte values (code units).
  */
-export function hashBuffer(data) {
-    const hash = createHash("sha512");
+export function hashBuffer(data, algorithm) {
+    let hash;
+    if (algorithm == "6") {
+        hash = createHash("sha512");
+    } else {
+        hash = createHash("sha256");
+    }
+
     hash.update(data);
     return Array.from(hash.digest());
 }
