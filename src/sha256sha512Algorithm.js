@@ -1,4 +1,4 @@
-import { assert } from "console";
+import { assert } from "node:console";
 
 import { hashBuffer, maxSaltLength, toUtf16Bytes } from "./utils.js";
 

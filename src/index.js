@@ -39,3 +39,7 @@ export function sha512(key, salt, rounds = 5000) {
 
     return result.toString();
 }
+
+export default {
+    sha512,
+};
