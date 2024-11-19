@@ -1,11 +1,11 @@
 {
     "name": "cryptjs",
-    "type": "module",
     "version": "0.0.1",
     "description": "a JavaScript/TypeScript library that brings cryptographic functionality from Dart to the web",
-    "main": "lib/index.js",
+    "main": "index.js",
     "scripts": {
-        "build": "babel src --out-dir lib --source-maps",
+        "build": "babel src --out-dir lib --source-maps && tsc",
+        "postbuild": "cp package.json lib",
         "lint": "eslint .",
         "test": "jest"
     },
@@ -36,10 +36,17 @@
     "author": "Abdellatif Dev",
     "license": "MIT",
     "devDependencies": {
+        "@babel/cli": "^7.25.9",
+        "@babel/core": "^7.26.0",
+        "@babel/plugin-transform-runtime": "^7.25.9",
+        "@babel/preset-env": "^7.26.0",
+        "@babel/runtime-corejs2": "^7.26.0",
         "@eslint/js": "^9.15.0",
         "@types/node": "^22.9.0",
+        "babel-plugin-add-module-exports": "^1.0.4",
         "eslint": "^9.15.0",
         "eslint-plugin-simple-import-sort": "^12.1.1",
-        "globals": "^15.12.0"
+        "globals": "^15.12.0",
+        "typescript": "^5.6.3"
     }
 }
