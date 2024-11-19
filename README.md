@@ -24,19 +24,19 @@ To install `cryptjs` for your project, you can use either npm or yarn.
 ### Using pnpm
 
 ```bash
-pnpm install cryptjs
+pnpm install @abdellatif.dev/cryptjs
 ```
 
 ### Using npm
 
 ```bash
-npm install cryptjs
+npm install @abdellatif.dev/cryptjs
 ```
 
 ### Using yarn
 
 ```bash
-yarn add cryptjs
+yarn add @abdellatif.dev/cryptjs
 ```
 
 ## Usage
@@ -46,42 +46,43 @@ code.
 
 ### Example: Hashing with SHA-512
 
-```javascript
-import { sha512 } from "cryptjs";
+```js
+const Cryptjs = require("@abdellatif.dev/cryptjs");
 
+/** @type {string} */
 const message = "Hello, world!";
-const hash = sha512(message);
+/** @type {string} */
+const salt = "Salt";
+/** @type {string} */
+const hash = Cryptjs.sha512(message, salt);
+
+console.log("SHA-512 Hash:", hash);
+```
+
+```ts
+import Cryptjs from "@abdellatif.dev/cryptjs";
+
+const message: string = "Hello, world!";
+const salt: string = "Salt";
+const hash: string = Cryptjs.sha512(message, salt);
+
 console.log("SHA-512 Hash:", hash);
 ```
 
 <!-- ### Example: Generating Random Values
 
-```javascript
+```js
 import { generateRandomBytes } from "cryptjs";
 
 const randomBytes = generateRandomBytes(16); // Generate 16 random bytes
 console.log("Random Bytes:", randomBytes);
 ``` -->
 
-## API Reference
-
-### Hashing Functions
-
-<!-- - **sha256(data: string | Uint8Array): string** - Returns the SHA-256 hash of -->
-<!--   the input data. -->
-
-- **sha512(data: string | Uint8Array): string** - Returns the SHA-512 hash of
-  the input data.
-
-### Random Number Generation
-
-- **generateRandomBytes(length: number) (NOT-IMPLEMENTED YET): Uint8Array** -
-  Generates cryptographically secure random bytes of the specified length.
-
 ## Supported Algorithms
 
 - SHA-256.
-- SHA-512.
+
+<!-- - SHA-512. -->
 
 ## Contributing
 
@@ -142,6 +143,7 @@ type ShaType = Sha256 | Sha512;
 type SaltedHash = `${ShaType}$${string}$${string}`;
 
 type Sha = {
+  type: ShaType;
   hash: string;
   salt: string;
   saltedHash: SaltedHash;
