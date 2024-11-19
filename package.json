@@ -4,6 +4,7 @@
     "description": "a JavaScript/TypeScript library that brings cryptographic functionality from Dart to the web",
     "main": "index.js",
     "scripts": {
+        "prebuild": "rm -rf lib/",
         "build": "babel src --out-dir lib --source-maps && tsc",
         "postbuild": "cp README.md package.json LICENSE lib",
         "publish": "cd lib && pnpm publish --access public",
