@@ -122,9 +122,17 @@ functions your library supports!
 
 - [ ] make salt optional and generate salt
 - [ ] secure random and not secure random
+- [ ] add min and max rounds
+
+```ts
+const minRounds = 1000;
+const maxRounds = 999999999;
+const defaultRounds = 5000;
+```
+
 - [ ] tests use something like `jest`
 - [ ] add sha256
-- [ ] return object in form of {hash, salt, `$6$${k}`}
+- [ ] return object in following form:
 
 ```ts
 type Sha256 = "5";
@@ -138,12 +146,4 @@ type Sha = {
   salt: string;
   saltedHash: SaltedHash;
 };
-```
-
-- [ ] add min and max rounds
-
-```ts
-const minRounds = 1000;
-const maxRounds = 999999999;
-const defaultRounds = 5000;
 ```
