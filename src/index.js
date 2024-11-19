@@ -40,6 +40,8 @@ export function sha512(key, salt, rounds = 5000) {
     return result.toString();
 }
 
-export default {
+const defaults = {
     sha512,
 };
+
+export default defaults;

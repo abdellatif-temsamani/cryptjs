@@ -1,10 +1,14 @@
 {
     "compilerOptions": {
-        "target": "es2022",
-        "module": "es2022",
+        "target": "esnext",
+        "module": "nodenext",
         "moduleResolution": "nodenext",
+        "declaration": true,
+        "emitDeclarationOnly": true,
         "allowJs": true,
         "checkJs": true,
+        "outDir": "./dist",
+        "rootDir": ".",
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "strict": true,

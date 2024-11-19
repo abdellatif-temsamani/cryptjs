@@ -3,9 +3,9 @@
     "type": "module",
     "version": "0.0.1",
     "description": "a JavaScript/TypeScript library that brings cryptographic functionality from Dart to the web",
-    "main": "src/index.js",
+    "main": "lib/index.js",
     "scripts": {
-        "build": "babel src --out-dir dist",
+        "build": "babel src --out-dir lib --source-maps",
         "lint": "eslint .",
         "test": "jest"
     },
