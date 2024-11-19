@@ -1,11 +1,11 @@
 {
     "name": "@abdellatif.dev/cryptjs",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "a JavaScript/TypeScript library that brings cryptographic functionality from Dart to the web",
     "main": "index.js",
     "scripts": {
         "build": "babel src --out-dir lib --source-maps && tsc",
-        "postbuild": "cp package.json LICENSE lib",
+        "postbuild": "cp README.md package.json LICENSE lib",
         "lint": "eslint .",
         "test": "jest"
     },
