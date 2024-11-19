@@ -1,10 +1,14 @@
+export type ShaType =
+    | { name: "sha256"; code: "5" }
+    | { name: "sha512"; code: "6" };
+
 /**
  * Represents the supported SHA algorithm types.
  *
  * - `"5"` for SHA-256.
  * - `"6"` for SHA-512.
  */
-export type ShaType = "5" | "6";
+type type = "5" | "6";
 
 /**
  * Represents a salted hash string.
@@ -17,4 +21,4 @@ export type ShaType = "5" | "6";
  * Example format: `$5$abc123$xyz456`
  *
  */
-export type SaltedHash = `$${ShaType}$${string}$${string}`;
+export type SaltedHash = `$${type}$${string}$${string}`;

@@ -2,11 +2,17 @@
  * Mapping of SHA types to their corresponding numeric identifiers.
  * Used for specifying the SHA algorithm in certain contexts, such as cryptographic operations.
  *
- * @type { { sha256: "5"; sha512: "6"; } }
+ * @type {{ sha256: import("./types").ShaType; sha512: import("./types").ShaType; }}
  */
 export const shaType = {
-    sha256: "5",
-    sha512: "6",
+    sha256: {
+        name: "sha256",
+        code: "5",
+    },
+    sha512: {
+        name: "sha512",
+        code: "6",
+    },
 };
 
 /**
@@ -39,6 +45,6 @@ export default class Sha {
      * @returns {import("./types").SaltedHash} The salted hash value.
      */
     toString() {
-        return `$${this.type}$${this.salt}$${this.hash}`;
+        return `$${this.type.code}$${this.salt}$${this.hash}`;
     }
 }

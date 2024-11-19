@@ -23,12 +23,7 @@ export function toUtf16Bytes(str) {
  * @returns {number[]} - An array of UTF-16 byte values (code units).
  */
 export function hashBuffer(data, algorithm) {
-    let hash;
-    if (algorithm == "6") {
-        hash = createHash("sha512");
-    } else {
-        hash = createHash("sha256");
-    }
+    const hash = createHash(algorithm.name);
 
     hash.update(data);
     return Array.from(hash.digest());

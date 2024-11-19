@@ -1,6 +1,6 @@
 import { encode3Bytes } from "./encode.js";
 import Sha, { shaType } from "./sha.js";
-import sha256sha512Algorithm from "./sha256sha512Algorithm.js";
+import sha256sha512Algorithm from "./shaAlgorithm.js";
 import StringBuffer from "./StringBuffer.js";
 
 /**
