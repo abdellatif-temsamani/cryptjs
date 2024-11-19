@@ -2,14 +2,15 @@ export default class StringBuffer {
     /**
      * @type {Array<string>}
      */
-    #buffer = [];
+    _buffer;
+
     constructor() {
         /**
          * Internal array to hold string parts.
          * @private
          * @type {Array<string>}
          */
-        this.#buffer = [];
+        this._buffer = [];
     }
 
     /**
@@ -19,7 +20,7 @@ export default class StringBuffer {
      * @returns {void}
      */
     append(str) {
-        this.#buffer.push(str);
+        this._buffer.push(str);
     }
 
     /**
@@ -28,6 +29,6 @@ export default class StringBuffer {
      * @returns {string} The concatenated string from all appended parts.
      */
     toString() {
-        return this.#buffer.join("");
+        return this._buffer.join("");
     }
 }
