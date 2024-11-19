@@ -1,6 +1,4 @@
-import { assert } from "console";
-
-import sha512 from "./index.js";
+import { sha512 } from "./src/index.js";
 const salt = "w2323lfkhwrafflawf142sadjasjkafsalkfsajflkafjha";
 
 const samples = [
@@ -42,5 +40,9 @@ const hashes = [
 ];
 
 for (let i = 0; i < samples.length; i++) {
-    console.log(sha512(samples[i], salt) === hashes[i] ? `PASSED AT ${i}` : `FAILED AT ${i}` );
+    console.log(
+        sha512(samples[i], salt) === hashes[i]
+            ? `PASSED AT ${i}`
+            : `FAILED AT ${i}`,
+    );
 }

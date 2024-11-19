@@ -27,5 +27,5 @@ export function hashBuffer(data) {
     return Array.from(hash.digest());
 }
 
-export const _base64EncodingChars =
+export const base64EncodingChars =
     "./0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
