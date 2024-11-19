@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "build": "babel src --out-dir lib --source-maps && tsc",
-        "postbuild": "cp package.json lib",
+        "postbuild": "cp package.json LICENSE lib",
         "lint": "eslint .",
         "test": "jest"
     },
