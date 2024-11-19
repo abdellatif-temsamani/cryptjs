@@ -3,7 +3,7 @@
         "module": "CommonJS",
         "target": "ES6",
         "declaration": true,
-        // "emitDeclarationOnly": true,
+        "emitDeclarationOnly": true,
         "allowJs": true,
         "checkJs": true,
         "outDir": "lib",
@@ -14,6 +14,14 @@
         "forceConsistentCasingInFileNames": true,
         "skipLibCheck": true
     },
-    "include": ["src/**/*.ts", "src/**/*.js"],
-    "exclude": ["./eslint.config.js", "./test.js", "node_modules", "lib/"]
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.js"
+    ],
+    "exclude": [
+        "./eslint.config.js",
+        "./test.js",
+        "node_modules",
+        "lib/"
+    ]
 }
