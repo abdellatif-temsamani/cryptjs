@@ -124,8 +124,8 @@ please fork the repository and submit a pull request.
 1. Fork the repository
 2. Clone your fork locally
 3. Make your changes or fix bugs
-4. Ensure that tests are passing (if applicable)
-5. Submit a pull request
+4. Ensure that tests are passing
+5. Submit a pull request against the `dev` branch
 
 ## License
 

@@ -43,7 +43,7 @@
         "@babel/preset-env": "^7.26.0",
         "@babel/runtime-corejs2": "^7.26.0",
         "@eslint/js": "^9.15.0",
-        "@types/node": "^22.9.0",
+        "@types/node": "^22.9.1",
         "babel-plugin-add-module-exports": "^1.0.4",
         "eslint": "^9.15.0",
         "eslint-plugin-simple-import-sort": "^12.1.1",
