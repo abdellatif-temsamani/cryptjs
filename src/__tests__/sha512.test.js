@@ -36,4 +36,6 @@ describe("SHA-512", () => {
             sha512(key, "$" + salt);
         }).toThrowError("Salt contains '$' character");
     });
+    /**
+     * TODO: ADD "Empty String", "Long Input Strings", "Binary Data", "Edge Cases" */
 });
