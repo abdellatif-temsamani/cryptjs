@@ -11,7 +11,7 @@ import { hashBuffer, maxSaltLength, toUtf16Bytes } from "./utils.js";
 
  * @returns {{ hashSeq:number[]; salt: string; }}
  */
-export default function sha256sha512Algorithm(
+export default function shaAlgorithm(
     algorithm,
     key,
     blockSize,

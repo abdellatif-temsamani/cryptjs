@@ -31,6 +31,18 @@ describe("SHA-512", () => {
         expect(salt).toContain(res.salt);
     });
 
+    test("empty String", () => {
+        expect(sha256("", salt).toString()).toBe(
+            "$5$w2323lfkhwraffla$h5ov/mayOG5TWawlkVhg6lNNBhRGV/D8ifse1n7mJn4",
+        );
+    });
+
+    test("long String", () => {
+        expect(sha256("a".repeat(1000), salt).toString()).toBe(
+            "$5$w2323lfkhwraffla$rOMpVUJ8Rsy7AAsT6yxw4w7JzOE5QT.OfzKrRbZo0B0",
+        );
+    });
+
     test("salt contains $", () => {
         expect(() => {
             sha256(key, "$" + salt);
