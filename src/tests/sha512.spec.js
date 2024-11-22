@@ -37,6 +37,12 @@ describe("SHA-512", () => {
         );
     });
 
+    test("empty String salt", () => {
+        expect(sha512(key, "").toString()).toBe(
+            "$6$$0tWw16P6sIhcjedEHzVS2YscgpDC4ut0SMIzY4wcqCnZmFzqsVrjXqQPLMPTXGvG1TUwuWYZRfkCznWHX.0u71",
+        );
+    });
+
     test("long String", () => {
         expect(sha512("a".repeat(1000), salt).toString()).toBe(
             "$6$w2323lfkhwraffla$Cx7VC.g5mtKgcHCFwv3G.AYfvPraMLYPVVDqejNGSpxe65JS8MMK7q2dEgWWNdtmgjqIjSUF0JZ0PtHzw4rah.",

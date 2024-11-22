@@ -98,7 +98,7 @@ export default function shaAlgorithm(
     const s = []; // Step 13
 
     count = salt.length;
-    while (blockSize <= count) {
+    while (count >= blockSize) {
         s.push(...dsBytes);
         count -= blockSize;
     }

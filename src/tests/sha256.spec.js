@@ -37,6 +37,12 @@ describe("SHA-512", () => {
         );
     });
 
+    test("empty String salt", () => {
+        expect(sha256(key, "").toString()).toBe(
+            "$5$$SnJ6Ld.DKt/DurOzsPgBtRsuP2hIsWgTIg7JJ4JrGJA",
+        );
+    });
+
     test("long String", () => {
         expect(sha256("a".repeat(1000), salt).toString()).toBe(
             "$5$w2323lfkhwraffla$rOMpVUJ8Rsy7AAsT6yxw4w7JzOE5QT.OfzKrRbZo0B0",
