@@ -151,11 +151,3 @@ ensure security and reliability.
 
 You can adjust the examples, features, and details depending on the specific
 functions your library supports!
-
-## TODO
-
-- [x] add sha256
-- [x] types support
-- [~] make salt optional and generate salt
-- [x] add min and max rounds
-- [x] tests use something like `jest`
