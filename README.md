@@ -1,9 +1,8 @@
-![NPMJS](https://img.shields.io/npm/v/%40abdellatif.dev%2Fcryptjs)
+[![NPMJS](https://img.shields.io/npm/v/%40abdellatif.dev%2Fcryptjs)](https://www.npmjs.com/package/@abdellatif.dev/cryptjs?activeTab=readme)
 [![Run Tests](https://github.com/abdellatif-temsamani/cryptjs/actions/workflows/test.yml/badge.svg)](https://github.com/abdellatif-temsamani/cryptjs/actions/workflows/test.yml)
+![Status: Alpha](https://img.shields.io/badge/Status-Alpha-orange)
 
 # Cryptjs
-
-![Status: Alpha](https://img.shields.io/badge/Status-Alpha-orange)
 
 > **Warning**: This library is **not production-ready** and is still in
 > **alpha**. Use with caution and expect breaking changes.
@@ -118,19 +117,6 @@ console.log("SHA-256 Hash:", hash.toString());
 - SHA-256.
 - SHA-512.
 
-## Contributing
-
-Contributions are welcome! If you have an idea for an improvement or find a bug,
-please fork the repository and submit a pull request.
-
-### Steps for Contributing
-
-1. Fork the repository
-2. Clone your fork locally
-3. Make your changes or fix bugs
-4. Ensure that tests are passing
-5. Submit a pull request against the `dev` branch
-
 ## License
 
 `cryptjs` is open source software, licensed under the MIT License. See the
@@ -152,11 +138,3 @@ ensure security and reliability.
 
 You can adjust the examples, features, and details depending on the specific
 functions your library supports!
-
-## TODO
-
-- [x] add sha256
-- [x] types support
-- [~] make salt optional and generate salt
-- [x] add min and max rounds
-- [x] tests use something like `jest`

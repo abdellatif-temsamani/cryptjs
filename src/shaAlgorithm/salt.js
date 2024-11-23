@@ -1,21 +1,28 @@
 import { randomBytes } from "node:crypto";
 
 /**
+ * @description maximum length of salt
  * @type {16}
  */
-const maxSaltLength = 16;
+export const maxSaltLength = 16;
 
-function genSalt() {
-    return randomBytes(maxSaltLength).toString("hex");
+/**
+ * @param {number} [len] length of salt
+ * @returns {string} generated salt
+ */
+export function genSalt(len = maxSaltLength) {
+    return randomBytes(len).toString("hex");
 }
 
 /**
- * @param {string | undefined} salt
- * @returns {string} salt
+ * @description validate salt
+ * @param {string | undefined} salt provided salt
+ * @returns {string} a valid salt
  */
 export default function validateSalt(salt) {
-    // TODO: random salt
+    // DONE: random salt
     if (salt === undefined) return genSalt();
+
     if (salt.includes("$")) {
         throw new Error("Salt contains '$' character");
     }

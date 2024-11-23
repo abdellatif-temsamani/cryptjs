@@ -1,0 +1,12 @@
+# JavaScript and TypeScript files
+*.js    text eol=lf linguist-language=JavaScript
+*.jsx   text eol=lf linguist-language=JavaScript
+*.ts    text eol=lf linguist-language=TypeScript
+*.tsx   text eol=lf linguist-language=TypeScript
+
+# JSON files (useful for GitHub language stats)
+*.json  text eol=lf linguist-language=JSON
+
+pnpm-lock.yaml text linguist-language=YAML
+
+

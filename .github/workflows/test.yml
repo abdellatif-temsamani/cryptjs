@@ -2,10 +2,6 @@
 name: Run Tests
 
 on:
-    push:
-        branches:
-            - main
-            - dev
     pull_request:
         branches:
             - main
@@ -22,7 +18,7 @@ jobs:
             - name: Set up Node.js
               uses: actions/setup-node@v4
               with:
-                  node-version: "16"
+                  node-version: "18"
 
             - name: Install Dependencies
               run: npm install

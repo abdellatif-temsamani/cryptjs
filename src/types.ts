@@ -3,7 +3,7 @@ export type ShaType =
     | { name: "sha512"; code: "6" };
 
 /**
- * Represents the supported SHA algorithm types.
+ * @description Represents the supported SHA algorithm types.
  *
  * - `"5"` for SHA-256.
  * - `"6"` for SHA-512.
@@ -11,7 +11,7 @@ export type ShaType =
 type type = "5" | "6";
 
 /**
- * Represents a salted hash string.
+ * @description Represents a salted hash string.
  *
  * The format is: `$<ShaType>$<string>$<string>`.
  * - `<ShaType>`: The SHA algorithm type (either "5" for SHA-256 or "6" for SHA-512).

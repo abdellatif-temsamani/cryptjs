@@ -2,7 +2,6 @@
  * @constant
  * @readonly
  * @type {{min: 1000; max: 99999; default: 5000}}
- *
  */
 export const roundsValues = {
     min: 1000,
@@ -11,8 +10,8 @@ export const roundsValues = {
 };
 
 /**
- * @param {number | undefined} rounds
- * @returns {number} rounds
+ * @param {number | undefined} rounds rounds for hashing
+ * @returns {number} a valid rounds
  */
 export default function validateRounds(rounds) {
     if (rounds === undefined) return roundsValues.default;
