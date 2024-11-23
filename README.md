@@ -1,4 +1,5 @@
 ![NPMJS](https://img.shields.io/npm/v/%40abdellatif.dev%2Fcryptjs)
+[![Run Tests](https://github.com/abdellatif-temsamani/cryptjs/actions/workflows/test.yml/badge.svg)](https://github.com/abdellatif-temsamani/cryptjs/actions/workflows/test.yml)
 
 # Cryptjs
 
