@@ -1,13 +1,15 @@
 import { assert } from "node:console";
 
-import { hashBuffer, maxSaltLength, toUtf16Bytes } from "./utils.js";
+import { hashBuffer, toUtf16Bytes } from "../utils.js";
+import validateRounds from "./rounds.js";
+import validateSalt from "./salt.js";
 
 /**
- * @param {import("./types.js").ShaType} algorithm
+ * @param {import("../types.js").ShaType} algorithm
  * @param {string} key
  * @param {32 | 64} blockSize
- * @param {number} rounds
- * @param {string} providedSalt
+ * @param {number | undefined} providedRounds
+ * @param {string | undefined} providedSalt
 
  * @returns {{ hashSeq:number[]; salt: string; }}
  */
@@ -15,19 +17,12 @@ export default function shaAlgorithm(
     algorithm,
     key,
     blockSize,
-    rounds,
+    providedRounds,
     providedSalt,
 ) {
     const valueBytes = toUtf16Bytes(key);
-
-    if (providedSalt.includes("$")) {
-        throw new Error("Salt contains '$' character");
-    }
-
-    const salt =
-        providedSalt.length <= maxSaltLength
-            ? providedSalt
-            : providedSalt.substring(0, maxSaltLength);
+    const rounds = validateRounds(providedRounds);
+    const salt = validateSalt(providedSalt);
 
     const saltBytes = toUtf16Bytes(salt);
 

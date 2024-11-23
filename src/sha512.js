@@ -1,17 +1,25 @@
 import { encode3Bytes } from "./encode.js";
 import Sha, { shaType } from "./sha.js";
-import sha256sha512Algorithm from "./shaAlgorithm.js";
+import sha256sha512Algorithm from "./shaAlgorithm/index.js";
 import StringBuffer from "./StringBuffer.js";
 
 /**
  * @param {string} key
- * @param {string} salt
- * @param {number} rounds
+ * @param {object} [options]
+ * @param {string} [options.salt]
+ * @param {number} [options.rounds]
  *
  * @returns {Sha}
  */
-export default function sha512(key, salt, rounds = 5000) {
-    const res = sha256sha512Algorithm(shaType.sha512, key, 64, rounds, salt);
+export default function sha512(key, options) {
+    const type = shaType.sha512;
+    const res = sha256sha512Algorithm(
+        type,
+        key,
+        64,
+        options?.rounds,
+        options?.salt,
+    );
     const c = res.hashSeq;
 
     const buffer = new StringBuffer();
@@ -39,5 +47,5 @@ export default function sha512(key, salt, rounds = 5000) {
     encode3Bytes(buffer, c[62], c[20], c[41]);
     encode3Bytes(buffer, c[63]);
 
-    return new Sha(shaType.sha512, res.salt, buffer.toString());
+    return new Sha(type, res.salt, buffer.toString());
 }

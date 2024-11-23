@@ -3,22 +3,21 @@
 > **Warning**: This library is **not production-ready** and is still in
 > **alpha**. Use with caution and expect breaking changes.
 
-- [Cryptjs](#cryptjs)
-  - [Features](#features)
-  - [Installation](#installation)
-    - [Using pnpm](#using-pnpm)
-    - [Using npm](#using-npm)
-    - [Using yarn](#using-yarn)
-  - [Usage](#usage)
-    - [Example: Hashing with SHA-512](#example-hashing-with-sha-512)
-    - [Example: Hashing with SHA-256](#example-hashing-with-sha-256)
-  - [Supported Algorithms](#supported-algorithms)
-  - [Contributing](#contributing)
-    - [Steps for Contributing](#steps-for-contributing)
-  - [License](#license)
-  - [Acknowledgments](#acknowledgments)
-    - [Key Points:](#key-points)
-  - [TODO](#todo)
+- [Features](#features)
+- [Installation](#installation)
+  - [Using pnpm](#using-pnpm)
+  - [Using npm](#using-npm)
+  - [Using yarn](#using-yarn)
+- [Usage](#usage)
+  - [JavaScript](#javascript)
+  - [TypeScript](#typescript)
+- [Supported Algorithms](#supported-algorithms)
+- [Contributing](#contributing)
+  - [Steps for Contributing](#steps-for-contributing)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+  - [Key Points:](#key-points)
+- [TODO](#todo)
 
 # Cryptjs
 
@@ -59,7 +58,7 @@ yarn add @abdellatif.dev/cryptjs
 Once installed, you can import and use `cryptjs` in your JavaScript/TypeScript
 code.
 
-### Example: Hashing with SHA-512
+### JavaScript
 
 ```js
 const Cryptjs = require("@abdellatif.dev/cryptjs");
@@ -68,44 +67,44 @@ const Cryptjs = require("@abdellatif.dev/cryptjs");
 const message = "Hello, world!";
 /** @type {string} */
 const salt = "Salt";
-/** @type {Cryptjs.Sha} */
-const hash = Cryptjs.sha512(message, salt);
 
+/**
+ * @description SHA-512
+ * {salt, rounds} optional
+ * @type {Cryptjs.Sha}
+ */
+const hash = Cryptjs.sha512(message, { salt: salt, rounds: 5000 });
 console.log("SHA-512 Hash:", hash.toString());
-```
 
-```ts
-import Cryptjs from "@abdellatif.dev/cryptjs";
-
-const message: string = "Hello, world!";
-const salt: string = "Salt";
-const hash: Cryptjs.Sha = Cryptjs.sha512(message, salt);
-
-console.log("SHA-512 Hash:", hash.toString());
-```
-
-### Example: Hashing with SHA-256
-
-```js
-const Cryptjs = require("@abdellatif.dev/cryptjs");
-
-/** @type {string} */
-const message = "Hello, world!";
-/** @type {string} */
-const salt = "Salt";
-/** @type {Cryptjs.Sha} */
-const hash = Cryptjs.sha256(message, salt);
-
+/**
+ * @description SHA-256
+ * {salt, rounds} optional
+ * @type {Cryptjs.Sha}
+ */
+const hash = Cryptjs.sha256(message, { salt: salt, rounds: 5000 });
 console.log("SHA-256 Hash:", hash.toString());
 ```
 
+### TypeScript
+
 ```ts
 import Cryptjs from "@abdellatif.dev/cryptjs";
 
 const message: string = "Hello, world!";
 const salt: string = "Salt";
-const hash: Cryptjs.Sha = Cryptjs.sha256(message, salt);
 
+/**
+ * @description SHA-512
+ * {salt, rounds} optional
+ */
+const hash: Cryptjs.Sha = Cryptjs.sha512(message, { salt: salt, rounds: 5000 });
+console.log("SHA-512 Hash:", hash.toString());
+
+/**
+ * @description SHA-256
+ * {salt, rounds} optional
+ */
+const hash: Cryptjs.Sha = Cryptjs.sha256(message, { salt: salt, rounds: 5000 });
 console.log("SHA-256 Hash:", hash.toString());
 ```
 
@@ -153,14 +152,6 @@ functions your library supports!
 
 - [x] add sha256
 - [x] types support
-- [ ] make salt optional and generate salt
-- [ ] secure random and not secure random
-- [ ] add min and max rounds
-
-```ts
-const minRounds = 1000;
-const maxRounds = 999999999;
-const defaultRounds = 5000;
-```
-
-- [ ] tests use something like `jest`
+- [~] make salt optional and generate salt
+- [x] add min and max rounds
+- [x] tests use something like `jest`

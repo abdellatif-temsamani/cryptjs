@@ -1,12 +1,6 @@
 import { createHash } from "node:crypto";
 
 /**
- * @description max length of a salt
- *
- */
-export const maxSaltLength = 16;
-
-/**
  * Converts a string to an array of UTF-16 byte values (code units).
  *
  * @param {string} str - The input string to convert.

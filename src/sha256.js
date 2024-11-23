@@ -1,17 +1,19 @@
 import { encode3Bytes } from "./encode.js";
 import Sha, { shaType } from "./sha.js";
-import shaAlgorithm from "./shaAlgorithm.js";
+import shaAlgorithm from "./shaAlgorithm/index.js";
 import StringBuffer from "./StringBuffer.js";
 
 /**
  * @param {string} key
- * @param {string} salt
- * @param {number} rounds
+ * @param {object} [options]
+ * @param {string} [options.salt]
+ * @param {number} [options.rounds]
  *
  * @returns {Sha}
  */
-export default function sha256(key, salt, rounds = 5000) {
-    const res = shaAlgorithm(shaType.sha256, key, 32, rounds, salt);
+export default function sha256(key, options) {
+    const type = shaType.sha256;
+    const res = shaAlgorithm(type, key, 32, options?.rounds, options?.salt);
     const c = res.hashSeq;
 
     const buffer = new StringBuffer();
@@ -28,5 +30,5 @@ export default function sha256(key, salt, rounds = 5000) {
     encode3Bytes(buffer, c[9], c[19], c[29]);
     encode3Bytes(buffer, c[31], c[30]);
 
-    return new Sha(shaType.sha256, res.salt, buffer.toString());
+    return new Sha(type, res.salt, buffer.toString());
 }
