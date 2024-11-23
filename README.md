@@ -1,3 +1,7 @@
+![NPMJS](https://img.shields.io/npm/v/%40abdellatif.dev%2Fcryptjs)
+
+# Cryptjs
+
 ![Status: Alpha](https://img.shields.io/badge/Status-Alpha-orange)
 
 > **Warning**: This library is **not production-ready** and is still in
