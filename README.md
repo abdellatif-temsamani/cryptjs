@@ -4,9 +4,6 @@
 
 # Cryptjs
 
-> **Warning**: This library is **not production-ready** and is still in
-> **alpha**. Use with caution and expect breaking changes.
-
 - [Features](#features)
 - [Installation](#installation)
   - [Using pnpm](#using-pnpm)
@@ -21,7 +18,6 @@
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
   - [Key Points:](#key-points)
-- [TODO](#todo)
 
 # Cryptjs
 

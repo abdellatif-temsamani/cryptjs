@@ -6,7 +6,7 @@
     "scripts": {
         "prebuild": "rm -rf lib/",
         "build": "babel src --source-maps --out-dir lib && tsc",
-        "postbuild": "cp README.md package.json LICENSE lib",
+        "postbuild": "cp .npmignore README.md package.json LICENSE lib",
         "lint": "eslint .",
         "test": "jest"
     },
