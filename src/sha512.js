@@ -4,18 +4,18 @@ import sha256sha512Algorithm from "./shaAlgorithm/index.js";
 import StringBuffer from "./StringBuffer.js";
 
 /**
- * @param {string} key
- * @param {object} [options]
- * @param {string} [options.salt]
- * @param {number} [options.rounds]
- *
- * @returns {Sha}
+ * @description sha-512 algorithm
+ * @param {string} data data to hash
+ * @param {object} [options] optional arugment
+ * @param {string} [options.salt] provided salt
+ * @param {number} [options.rounds] provided rounds
+ * @returns {Sha} Sha-512
  */
-export default function sha512(key, options) {
+export default function sha512(data, options) {
     const type = shaType.sha512;
     const res = sha256sha512Algorithm(
         type,
-        key,
+        data,
         64,
         options?.rounds,
         options?.salt,

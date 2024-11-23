@@ -1,7 +1,6 @@
 /**
  * Mapping of SHA types to their corresponding numeric identifiers.
  * Used for specifying the SHA algorithm in certain contexts, such as cryptographic operations.
- *
  * @type {{ sha256: import("./types").ShaType; sha512: import("./types").ShaType; }}
  */
 export const shaType = {
@@ -16,7 +15,7 @@ export const shaType = {
 };
 
 /**
- * Class representing a SHA object with its type, hash, salt, and salted hash.
+ * @description Class representing a SHA object with its type, hash, salt, and salted hash.
  */
 export default class Sha {
     /** @type {import("./types").ShaType} */
@@ -27,21 +26,19 @@ export default class Sha {
     salt;
 
     /**
-     * Creates an instance of the Sha class.
-     *
-     * @param {import("./types").ShaType} type
-     * @param {string} hash - The hash value.
-     * @param {string} salt - The salt value.
+     * @description Creates an instance of the Sha class.
+     * @param {import("./types").ShaType} algorithm type of algorithm
+     * @param {string} salt The hash value.
+     * @param {string} hash The salt value.
      */
-    constructor(type, salt, hash) {
-        this.type = type;
+    constructor(algorithm, salt, hash) {
+        this.type = algorithm;
         this.salt = salt;
         this.hash = hash;
     }
 
     /**
      * Method to get the salted hash.
-     *
      * @returns {import("./types").SaltedHash} The salted hash value.
      */
     toString() {

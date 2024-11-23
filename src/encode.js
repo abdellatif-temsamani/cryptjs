@@ -1,14 +1,18 @@
-// eslint-disable-next-line no-unused-vars
-import StringBuffer from "./StringBuffer.js";
-import { base64EncodingChars } from "./utils.js";
+import StringBuffer from "./StringBuffer";
 
 /**
- * Encodes 3 bytes into base64 encoding and appends the result to the StringBuffer.
- *
- * @param {StringBuffer} result - The StringBuffer where the result will be appended.
- * @param {number} c - The first byte to be encoded.
- * @param {number} [b] - The second byte to be encoded (optional).
- * @param {number} [a] - The third byte to be encoded (optional).
+ * @description base64 chars
+ */
+export const base64EncodingChars =
+    "./0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
+/**
+ * @description Encodes 3 bytes into base64 encoding and appends the result to the StringBuffer.
+ * @param {StringBuffer} result  The StringBuffer where the result will be appended.
+ * @param {number} c  The first byte to be encoded.
+ * @param {number} [b] The second byte to be encoded (optional).
+ * @param {number} [a] The third byte to be encoded (optional).
+ * @returns {void} returns nothing
  */
 export function encode3Bytes(result, c, b, a) {
     let n; // number of characters in encoding
@@ -30,6 +34,4 @@ export function encode3Bytes(result, c, b, a) {
         result.append(base64EncodingChars.substring(value, value + 1));
         w >>= 6;
     }
-
-    return result.toString();
 }
