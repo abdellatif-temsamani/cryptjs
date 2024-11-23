@@ -117,19 +117,6 @@ console.log("SHA-256 Hash:", hash.toString());
 - SHA-256.
 - SHA-512.
 
-## Contributing
-
-Contributions are welcome! If you have an idea for an improvement or find a bug,
-please fork the repository and submit a pull request.
-
-### Steps for Contributing
-
-1. Fork the repository
-2. Clone your fork locally
-3. Make your changes or fix bugs
-4. Ensure that tests are passing
-5. Submit a pull request against the `dev` branch
-
 ## License
 
 `cryptjs` is open source software, licensed under the MIT License. See the
