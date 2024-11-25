@@ -8,7 +8,7 @@ export type ShaType =
  * - `"5"` for SHA-256.
  * - `"6"` for SHA-512.
  */
-type type = "5" | "6";
+type Type = "5" | "6";
 
 /**
  * @description Represents a salted hash string.
@@ -21,4 +21,4 @@ type type = "5" | "6";
  * Example format: `$5$abc123$xyz456`
  *
  */
-export type SaltedHash = `$${type}$${string}$${string}`;
+export type SaltedHash = `$${Type}$${string}$${string}`;
