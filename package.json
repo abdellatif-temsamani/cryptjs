@@ -4,7 +4,7 @@
     "description": "a JavaScript/TypeScript library that brings cryptographic functionality from Dart to the web",
     "main": "index.js",
     "scripts": {
-        "postinstall": "rn-nodeify --install buffer,stream,crypto,process --hack && mv shim.js src/shim.js || true",
+        "postinstall": "rn-nodeify --install buffer,stream,crypto,process --hack",
         "prebuild": "rm -rf lib/",
         "build": "node build.js && tsc",
         "postbuild": "cp .npmignore README.md package.json LICENSE lib",
