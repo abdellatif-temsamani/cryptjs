@@ -12,7 +12,6 @@ esbuild.build({
     outdir: "lib",
     platform: "node",
     target: "node23",
-    external: ["crypto", "console"],
 }).catch((err) => {
     console.error(err);
     process.exit(1);
