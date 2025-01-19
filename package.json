@@ -1,6 +1,6 @@
 {
     "name": "@abdellatif.dev/cryptjs",
-    "version": "0.4.4-rc.1",
+    "version": "0.4.5-rc.1",
     "description": "a JavaScript/TypeScript library that brings cryptographic functionality from Dart to the web",
     "main": "index.js",
     "scripts": {
@@ -78,5 +78,11 @@
         "_stream_duplex": "readable-stream/duplex",
         "_stream_passthrough": "readable-stream/passthrough",
         "stream": "stream-browserify"
+    },
+    "pnpm": {
+        "onlyBuiltDependencies": [
+            "rn-nodeify",
+            "esbuild"
+        ]
     }
 }
