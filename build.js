@@ -9,7 +9,6 @@ esbuild.build({
     bundle: true,
     minify: true,
     sourcemap: true,
-
     outdir: "lib",
     platform: "node",
     target: "node23",
