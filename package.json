@@ -1,12 +1,12 @@
 {
     "name": "@abdellatif.dev/cryptjs",
-    "version": "0.4.1-rc.2",
+    "version": "0.4.1-rc.3",
     "description": "a JavaScript/TypeScript library that brings cryptographic functionality from Dart to the web",
     "main": "index.js",
     "scripts": {
         "prebuild": "rm -rf lib/",
         "build": "node build.js",
-        "postbuild": "cp .npmignore README.md package.json LICENSE lib",
+        "postbuild": "cp .npmignore README.md package.json LICENSE metro.config.js lib",
         "lint": "eslint .",
         "test": "jest"
     },
