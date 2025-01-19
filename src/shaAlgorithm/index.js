@@ -1,4 +1,4 @@
-import { assert } from "node:console";
+import { assert } from "console";
 
 import validateRounds from "./rounds.js";
 import validateSalt from "./salt.js";

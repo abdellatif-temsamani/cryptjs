@@ -1,4 +1,4 @@
-import { createHash } from "node:crypto";
+import { createHash } from "crypto";
 
 /**
  * Converts a string to an array of UTF-16 byte values (code units).
