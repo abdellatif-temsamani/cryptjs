@@ -6,7 +6,7 @@
     "scripts": {
         "prebuild": "rm -rf lib/",
         "build": "node build.js && tsc",
-        "postbuild": "cp .npmignore README.md package.json LICENSE metro.config.js lib",
+        "postbuild": "cp .npmignore README.md package.json LICENSE lib",
         "lint": "eslint .",
         "test": "jest"
     },
@@ -51,9 +51,6 @@
         "node-notifier": "^10.0.1",
         "ts-jest": "^29.2.5",
         "typescript": "^5.6.3"
-    },
-    "dependencies": {
-        "node-libs-react-native": "^1.2.1"
     },
     "react-native": {
         "zlib": "browserify-zlib",
