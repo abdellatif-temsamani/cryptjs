@@ -1,10 +1,9 @@
 {
     "name": "@abdellatif.dev/cryptjs",
-    "version": "0.4.7-rc.3",
-    "description": "a JavaScript/TypeScript library that brings cryptographic functionality from Dart to the web",
+    "version": "0.4.7-rc.4",
+    "description": "A JavaScript/TypeScript library that brings cryptographic functionality from Dart to the web",
     "main": "index.js",
     "scripts": {
-        "postinstall": "rn-nodeify --install buffer,stream,crypto,process --hack",
         "prebuild": "rm -rf lib/",
         "build": "node build.js && tsc",
         "postbuild": "cp .npmignore README.md package.json LICENSE lib",
@@ -50,36 +49,8 @@
         "globals": "^15.12.0",
         "jest": "^29.7.0",
         "node-notifier": "^10.0.1",
-        "rn-nodeify": "^10.3.0",
         "ts-jest": "^29.2.5",
         "typescript": "^5.6.3"
-    },
-    "dependencies": {
-        "buffer": "^6.0.3",
-        "crypto-browserify": "^3.12.1",
-        "process": "^0.11.10",
-        "react-native-crypto": "^2.1.0",
-        "react-native-randombytes": "^3.0.0",
-        "readable-stream": "1.0.33",
-        "stream-browserify": "^3.0.0"
-    },
-    "react-native": {
-        "crypto": "react-native-crypto",
-        "_stream_transform": "readable-stream/transform",
-        "_stream_readable": "readable-stream/readable",
-        "_stream_writable": "readable-stream/writable",
-        "_stream_duplex": "readable-stream/duplex",
-        "_stream_passthrough": "readable-stream/passthrough",
-        "stream": "stream-browserify"
-    },
-    "browser": {
-        "crypto": "react-native-crypto",
-        "_stream_transform": "readable-stream/transform",
-        "_stream_readable": "readable-stream/readable",
-        "_stream_writable": "readable-stream/writable",
-        "_stream_duplex": "readable-stream/duplex",
-        "_stream_passthrough": "readable-stream/passthrough",
-        "stream": "stream-browserify"
     },
     "pnpm": {
         "onlyBuiltDependencies": [
