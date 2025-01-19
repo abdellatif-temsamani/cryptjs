@@ -1,5 +1,4 @@
 const esbuild = require("esbuild");
-const { dtsPlugin } = require("esbuild-plugin-d.ts");
 const fg = require("fast-glob");
 
 const entryPoints = fg.sync([
@@ -11,13 +10,12 @@ const entryPoints = fg.sync([
 esbuild
     .build({
         entryPoints: entryPoints,
-        bundle: true,
-        minify: true,
+        bundle: false,
+        minify: false,
         sourcemap: true,
         outdir: "lib",
         platform: "node",
         target: "node23",
-        plugins: [dtsPlugin({})],
     })
     .catch((err) => {
         console.error(err);

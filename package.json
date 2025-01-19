@@ -1,11 +1,11 @@
 {
     "name": "@abdellatif.dev/cryptjs",
-    "version": "0.4.1-rc.4",
+    "version": "0.4.1-rc.5",
     "description": "a JavaScript/TypeScript library that brings cryptographic functionality from Dart to the web",
     "main": "index.js",
     "scripts": {
         "prebuild": "rm -rf lib/",
-        "build": "node build.js",
+        "build": "node build.js && tsc",
         "postbuild": "cp .npmignore README.md package.json LICENSE metro.config.js lib",
         "lint": "eslint .",
         "test": "jest"
@@ -42,7 +42,6 @@
         "@types/jest": "^29.5.14",
         "@types/node": "^22.9.1",
         "esbuild": "^0.24.2",
-        "esbuild-plugin-d.ts": "^1.3.1",
         "eslint": "^9.15.0",
         "eslint-plugin-jsdoc": "^50.5.0",
         "eslint-plugin-simple-import-sort": "^12.1.1",
