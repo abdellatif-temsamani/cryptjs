@@ -2,3 +2,7 @@ src/
 node_modules/
 *.log
 **/tests/
+./jest.config.js
+./CONTRIBUTING.md
+./CODE_OF_CONDUCT.md
+./README.md

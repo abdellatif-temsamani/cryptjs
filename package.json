@@ -2,7 +2,7 @@
     "name": "@abdellatif.dev/cryptjs",
     "version": "0.4.0",
     "description": "a JavaScript/TypeScript library that brings cryptographic functionality from Dart to the web",
-    "main": "index.js",
+    "main": "./lib/index.js",
     "scripts": {
         "prebuild": "rm -rf lib/",
         "build": "babel src --source-maps --out-dir lib && tsc",
@@ -56,5 +56,10 @@
         "node-notifier": "^10.0.1",
         "ts-jest": "^29.2.5",
         "typescript": "^5.6.3"
+    },
+    "pnpm": {
+        "onlyBuiltDependencies": [
+            "core-js"
+        ]
     }
 }
