@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+pnpm build
+cd ./lib || exit 1
+
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
 VERSION=$(node -p "require('./package.json').version")
 
