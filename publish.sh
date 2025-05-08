@@ -1,15 +1,17 @@
-#!/bin/sh
-
+#!/bin/bash
 set -e
-pnpm build
-cd ./lib || exit 1
-
-pnpm publish
 
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
+VERSION=$(node -p "require('./package.json').version")
 
-if [ "$BRANCH" = "dev" ]; then
-    pnpm publish --access public --tag=rc
+# Detect if version is a prerelease (has hyphen)
+if [[ "$VERSION" == *-* ]]; then
+    echo "Detected prerelease version: $VERSION"
+    pnpm publish --access public --tag rc
 else
-    pnpm publish --access public
+    if [ "$BRANCH" = "dev" ]; then
+        pnpm publish --access public --tag rc
+    else
+        pnpm publish --access public
+    fi
 fi
