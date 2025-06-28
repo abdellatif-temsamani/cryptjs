@@ -30,6 +30,6 @@ describe("SHA-512 SALT", () => {
     test("salt contains $", () => {
         expect(() => {
             sha512(key, { salt: "$" + salt });
-        }).toThrowError("Salt contains '$' character");
+        }).toThrow("Salt contains '$' character");
     });
 });
