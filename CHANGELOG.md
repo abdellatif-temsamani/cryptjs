@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [unreleased]
+
+### 📚 Documentation
+
+- *(changelog)* Init changelog
+
 ## [0.5.0] - 2025-06-28
 
 ### 🚀 Features
