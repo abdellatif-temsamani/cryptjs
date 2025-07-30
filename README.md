@@ -2,6 +2,16 @@
 [![Run Tests](https://github.com/abdellatif-temsamani/cryptjs/actions/workflows/test.yml/badge.svg)](https://github.com/abdellatif-temsamani/cryptjs/actions/workflows/test.yml)
 ![Status: Alpha](https://img.shields.io/badge/Status-Alpha-orange)
 
+> ⚠️ **IMPORTANT NOTICE:**\
+> **Israeli users are strictly prohibited from using this project.**\
+> **FREE PALESTINE.**
+>
+> This restriction is imposed as a clear and urgent protest against the ongoing
+> occupation, violence, and human rights violations committed by the Israeli
+> state against the Palestinian people.\
+> By banning usage in Israel, this project stands in solidarity with Palestine
+> and calls for justice, freedom, and an end to oppression.
+
 # Cryptjs
 
 - [Features](#features)
