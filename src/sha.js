@@ -17,7 +17,7 @@ export const shaType = {
 /**
  * @description Class representing a SHA object with its type, hash, salt, and salted hash.
  */
-export default class Sha {
+export class Sha {
     /** @type {import("./types").ShaType} */
     type;
     /** @type {string} */

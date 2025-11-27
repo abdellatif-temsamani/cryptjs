@@ -1,5 +1,4 @@
-import Sha from "./sha.js";
-import sha256 from "./sha256.js";
-import sha512 from "./sha512.js";
+export { shaType, Sha } from "./sha.js";
 
-export { Sha, sha256, sha512 };
+export { sha256 } from "./sha256.js";
+export { sha512 } from "./sha512.js";

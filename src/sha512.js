@@ -1,17 +1,17 @@
 import { encode3Bytes } from "./encode.js";
-import Sha, { shaType } from "./sha.js";
+import { Sha, shaType } from "./sha.js";
 import sha256sha512Algorithm from "./shaAlgorithm/index.js";
 import StringBuffer from "./StringBuffer.js";
 
 /**
- * @description sha-512 algorithm
+ * sha-512 algorithm
  * @param {string} data data to hash
  * @param {object} [options] optional arugment
  * @param {string} [options.salt] provided salt
  * @param {number} [options.rounds] provided rounds
  * @returns {Sha} Sha-512
  */
-export default function sha512(data, options) {
+export function sha512(data, options) {
     const type = shaType.sha512;
     const res = sha256sha512Algorithm(
         type,
