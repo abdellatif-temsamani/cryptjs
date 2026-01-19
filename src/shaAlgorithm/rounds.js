@@ -22,5 +22,5 @@ function validateRounds(rounds) {
     return rounds;
 }
 
-module.exports = validateRounds;
-module.exports.roundsValues = roundsValues;
+export default validateRounds;
+export { roundsValues };

@@ -6,7 +6,7 @@
     "main": "src/index.js",
     "scripts": {
         "lint": "eslint .",
-        "test": "jest"
+        "test": "NODE_OPTIONS=--experimental-vm-modules jest"
     },
     "repository": {
         "type": "git",
@@ -35,6 +35,12 @@
     "author": "Abdellatif Dev",
      "license": "MIT",
      "types": "src/types.d.ts",
+    "exports": {
+        ".": {
+            "import": "./src/index.js",
+            "types": "./src/types.d.ts"
+        }
+    },
     "devDependencies": {
         "@eslint/js": "^9.39.2",
         "@jest/globals": "^30.2.0",

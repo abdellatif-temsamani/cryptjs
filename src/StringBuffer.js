@@ -28,4 +28,4 @@ class StringBuffer {
     }
 }
 
-module.exports = StringBuffer;
+export default StringBuffer;

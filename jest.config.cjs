@@ -1,5 +1,5 @@
 /** @type {import('jest').Config} */
-const config = {
+module.exports = {
     collectCoverage: true,
 
     errorOnDeprecated: false,
@@ -14,5 +14,3 @@ const config = {
 
     workerIdleMemoryLimit: "512MB",
 };
-
-export default config;

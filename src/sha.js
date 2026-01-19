@@ -46,4 +46,4 @@ class Sha {
     }
 }
 
-module.exports = { shaType, Sha };
+export { Sha, shaType };

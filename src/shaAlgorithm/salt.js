@@ -1,4 +1,4 @@
-const { randomBytes } = require("crypto");
+import { randomBytes } from "crypto";
 
 /**
  * maximum length of salt
@@ -32,6 +32,5 @@ function validateSalt(salt) {
     return salt;
 }
 
-module.exports = validateSalt;
-module.exports.genSalt = genSalt;
-module.exports.maxSaltLength = maxSaltLength;
+export default validateSalt;
+export { genSalt, maxSaltLength };

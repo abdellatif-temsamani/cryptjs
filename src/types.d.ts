@@ -1,6 +1,6 @@
 export type ShaType =
-    | { name: "sha256"; code: "5" }
-    | { name: "sha512"; code: "6" };
+    | ({ name: "sha256" } & { code: "5" })
+    | ({ name: "sha512" } & { code: "6" });
 
 /**
  * @description Represents the supported SHA algorithm types.
@@ -95,7 +95,12 @@ export type ValidateRoundsFunction = (rounds?: number | undefined) => number;
 /**
  * Function signature for encoding 3 bytes to base64.
  */
-export type Encode3BytesFunction = (result: StringBufferInterface, c: number, b?: number, a?: number) => void;
+export type Encode3BytesFunction = (
+    result: StringBufferInterface,
+    c: number,
+    b?: number,
+    a?: number,
+) => void;
 
 /**
  * Function signature for converting string to UTF-16 bytes.
@@ -105,7 +110,10 @@ export type ToUtf16BytesFunction = (str: string) => Utf16Bytes;
 /**
  * Function signature for hashing a buffer.
  */
-export type HashBufferFunction = (data: Buffer, algorithm: ShaType) => HashDigest;
+export type HashBufferFunction = (
+    data: Buffer,
+    algorithm: ShaType,
+) => HashDigest;
 
 /**
  * Function signature for the core SHA algorithm.
@@ -115,7 +123,7 @@ export type ShaAlgorithmFunction = (
     data: string,
     blockSize: ShaBlockSize,
     providedRounds?: number,
-    providedSalt?: string
+    providedSalt?: string,
 ) => ShaAlgorithmResult;
 
 /**
@@ -127,3 +135,32 @@ export type Sha256Function = (data: string, options?: ShaOptions) => Sha;
  * Function signature for SHA-512 hashing.
  */
 export type Sha512Function = (data: string, options?: ShaOptions) => Sha;
+
+/**
+ * Mapping of SHA types to their corresponding numeric identifiers.
+ */
+export declare const shaType: {
+    sha256: ShaType;
+    sha512: ShaType;
+};
+
+/**
+ * Class representing a SHA object with its type, hash, salt, and salted hash.
+ */
+export declare class Sha {
+    type: ShaType;
+    hash: string;
+    salt: string;
+    constructor(algorithm: ShaType, salt: string, hash: string);
+    toString(): SaltedHash;
+}
+
+/**
+ * SHA-256 hashing function.
+ */
+export declare function sha256(data: string, options?: ShaOptions): Sha;
+
+/**
+ * SHA-512 hashing function.
+ */
+export declare function sha512(data: string, options?: ShaOptions): Sha;

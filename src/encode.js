@@ -1,5 +1,3 @@
-const StringBuffer = require("./StringBuffer");
-
 const base64EncodingChars =
     "./0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
@@ -33,4 +31,4 @@ function encode3Bytes(result, c, b, a) {
     }
 }
 
-module.exports = { encode3Bytes, base64EncodingChars };
+export { base64EncodingChars,encode3Bytes };

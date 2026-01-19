@@ -1,8 +1,8 @@
-const { assert } = require("console");
+import assert from "node:assert";
 
-const validateRounds = require("./rounds.js");
-const validateSalt = require("./salt.js");
-const { hashBuffer, toUtf16Bytes } = require("./utils.js");
+import validateRounds from "./rounds.js";
+import validateSalt from "./salt.js";
+import { hashBuffer, toUtf16Bytes } from "./utils.js";
 
 /**
  * Sha algorithm
@@ -117,4 +117,4 @@ function shaAlgorithm(
     };
 }
 
-module.exports = shaAlgorithm;
+export default shaAlgorithm;

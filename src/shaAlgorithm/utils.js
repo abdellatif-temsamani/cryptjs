@@ -1,4 +1,4 @@
-const { createHash } = require("crypto");
+import { createHash } from "crypto";
 
 /**
  * Converts a string to an array of UTF-16 byte values (code units).
@@ -22,4 +22,4 @@ function hashBuffer(data, algorithm) {
     return Array.from(hash.digest());
 }
 
-module.exports = { toUtf16Bytes, hashBuffer };
+export { hashBuffer,toUtf16Bytes };

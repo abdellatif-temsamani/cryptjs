@@ -1,7 +1,7 @@
-const { encode3Bytes } = require("./encode.js");
-const { Sha, shaType } = require("./sha.js");
-const shaAlgorithm = require("./shaAlgorithm/index.js");
-const StringBuffer = require("./StringBuffer.js");
+import { encode3Bytes } from "./encode.js";
+import { Sha, shaType } from "./sha.js";
+import shaAlgorithm from "./shaAlgorithm/index.js";
+import StringBuffer from "./StringBuffer.js";
 
 /**
  * sha-256 algorithm
@@ -33,4 +33,4 @@ function sha256(data, options) {
     return new Sha(type, res.salt, buffer.toString());
 }
 
-module.exports = { sha256 };
+export { sha256 };

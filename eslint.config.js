@@ -14,7 +14,7 @@ export default [
             jsdoc,
         },
         languageOptions: {
-            sourceType: "commonjs",
+            sourceType: "module",
             globals: globals.node,
         },
         rules: {

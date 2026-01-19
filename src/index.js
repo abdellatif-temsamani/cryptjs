@@ -1,6 +1,5 @@
-const { shaType, Sha } = require("./sha.js");
+import { Sha, shaType } from "./sha.js";
+import { sha256 } from "./sha256.js";
+import { sha512 } from "./sha512.js";
 
-const { sha256 } = require("./sha256.js");
-const { sha512 } = require("./sha512.js");
-
-module.exports = { shaType, Sha, sha256, sha512 };
+export { Sha, sha256, sha512, shaType };
