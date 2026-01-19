@@ -1,7 +1,7 @@
-import { encode3Bytes } from "./encode.js";
-import { Sha, shaType } from "./sha.js";
-import sha256sha512Algorithm from "./shaAlgorithm/index.js";
-import StringBuffer from "./StringBuffer.js";
+const { encode3Bytes } = require("./encode.js");
+const { Sha, shaType } = require("./sha.js");
+const sha256sha512Algorithm = require("./shaAlgorithm/index.js");
+const StringBuffer = require("./StringBuffer.js");
 
 /**
  * sha-512 algorithm
@@ -11,7 +11,7 @@ import StringBuffer from "./StringBuffer.js";
  * @param {number} [options.rounds] provided rounds
  * @returns {Sha} Sha-512
  */
-export function sha512(data, options) {
+function sha512(data, options) {
     const type = shaType.sha512;
     const res = sha256sha512Algorithm(
         type,
@@ -49,3 +49,5 @@ export function sha512(data, options) {
 
     return new Sha(type, res.salt, buffer.toString());
 }
+
+module.exports = { sha512 };

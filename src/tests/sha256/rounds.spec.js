@@ -1,7 +1,7 @@
-import { describe, expect, test } from "@jest/globals";
+const { describe, expect, test } = require("@jest/globals");
 
-import { sha256 } from "../../sha256";
-import { roundsValues } from "../../shaAlgorithm/rounds";
+const { sha256 } = require("../../sha256");
+const { roundsValues } = require("../../shaAlgorithm/rounds");
 
 describe("SHA-512 rounds", () => {
     const salt = "w2323lfkhwrafflawf142sadjasjkafsalkfsajflkafjha";

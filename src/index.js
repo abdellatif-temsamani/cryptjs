@@ -1,4 +1,6 @@
-export { shaType, Sha } from "./sha.js";
+const { shaType, Sha } = require("./sha.js");
 
-export { sha256 } from "./sha256.js";
-export { sha512 } from "./sha512.js";
+const { sha256 } = require("./sha256.js");
+const { sha512 } = require("./sha512.js");
+
+module.exports = { shaType, Sha, sha256, sha512 };

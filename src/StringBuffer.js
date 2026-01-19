@@ -1,7 +1,4 @@
-export default class StringBuffer {
-    /**
-     * @type {Array<string>}
-     */
+class StringBuffer {
     #buffer;
 
     constructor() {
@@ -14,7 +11,7 @@ export default class StringBuffer {
     }
 
     /**
-     * @description Appends a string to the buffer.
+     * Appends a string to the buffer.
      * @param {string} str The string to append to the buffer.
      * @returns {void}
      */
@@ -23,10 +20,12 @@ export default class StringBuffer {
     }
 
     /**
-     * @description Converts the buffer to a single string.
+     * Converts the buffer to a single string.
      * @returns {string} The concatenated string from all appended parts.
      */
     toString() {
         return this.#buffer.join("");
     }
 }
+
+module.exports = StringBuffer;

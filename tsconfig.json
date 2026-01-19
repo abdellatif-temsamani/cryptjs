@@ -1,28 +1,15 @@
 {
     "compilerOptions": {
         "target": "ESNext",
-        "module": "ESNext",
+        "module": "CommonJS",
         "moduleResolution": "node",
-        "declaration": true,
-        "emitDeclarationOnly": true,
-        "allowJs": true,
         "checkJs": true,
-        "outDir": "lib",
-        "rootDir": "src",
+        "noEmit": true,
         "strict": true,
-        "noEmitOnError": true,
+        "noImplicitAny": false,
         "esModuleInterop": true,
-        "forceConsistentCasingInFileNames": true,
         "skipLibCheck": true
     },
-    "include": [
-        "src/**/*.ts",
-        "src/**/*.js"
-    ],
-    "exclude": [
-        "./eslint.config.js",
-        "./test.js",
-        "node_modules",
-        "lib/"
-    ]
+    "include": ["src/**/*.js"],
+    "exclude": ["node_modules", "**/*.spec.js"]
 }

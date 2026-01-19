@@ -1,10 +1,11 @@
-import { assert } from "console";
+const { assert } = require("console");
 
-import validateRounds from "./rounds.js";
-import validateSalt from "./salt.js";
-import { hashBuffer, toUtf16Bytes } from "./utils.js";
+const validateRounds = require("./rounds.js");
+const validateSalt = require("./salt.js");
+const { hashBuffer, toUtf16Bytes } = require("./utils.js");
 
 /**
+ * Sha algorithm
  * @param {import("../types.js").ShaType} algorithm either sha-256 or sha-512
  * @param {string} data data to hash
  * @param {32 | 64} blockSize blocksize
@@ -12,7 +13,7 @@ import { hashBuffer, toUtf16Bytes } from "./utils.js";
  * @param {string | undefined} providedSalt provided salt
  * @returns {{ hashSeq:number[]; salt: string; }} returns hash sequence, salt
  */
-export default function shaAlgorithm(
+function shaAlgorithm(
     algorithm,
     data,
     blockSize,
@@ -50,7 +51,6 @@ export default function shaAlgorithm(
 
     const digestA = hashBuffer(Buffer.from(dataA), algorithm);
 
-    /** @type {number[]} */
     const dataDP = [];
 
     for (let x = 0; x < data.length; x++) {
@@ -59,7 +59,6 @@ export default function shaAlgorithm(
 
     const dpBytes = hashBuffer(Buffer.from(dataDP), algorithm);
 
-    /** @type {number[]} */
     const p = [];
 
     count = data.length;
@@ -70,7 +69,6 @@ export default function shaAlgorithm(
 
     0 < count && p.push(...dpBytes.slice(0, count));
 
-    /** @type {number[]} */
     const dataDS = [];
     const a0 = digestA[0];
     assert(0 <= a0 && a0 < 256);
@@ -80,7 +78,6 @@ export default function shaAlgorithm(
     }
     const dsBytes = hashBuffer(Buffer.from(dataDS), algorithm);
 
-    /** @type {number[]} */
     const s = [];
 
     count = salt.length;
@@ -93,7 +90,6 @@ export default function shaAlgorithm(
 
     let hashSeq = digestA;
     for (var r = 0; r < rounds; r++) {
-        /** @type {number[]} */
         const dataC = [];
 
         if (r % 2 == 1) {
@@ -120,3 +116,5 @@ export default function shaAlgorithm(
         salt,
     };
 }
+
+module.exports = shaAlgorithm;
