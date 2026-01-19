@@ -1,6 +1,6 @@
 import { describe, expect, test } from "@jest/globals";
 
-import sha256 from "../../sha256";
+import { sha256 } from "../../sha256.js";
 
 describe("SHA-256 SALT", () => {
     const salt = "w2323lfkhwrafflawf142sadjasjkafsalkfsajflkafjha";

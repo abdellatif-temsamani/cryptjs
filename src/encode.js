@@ -1,22 +1,17 @@
-import StringBuffer from "./StringBuffer";
-
-/**
- * @description base64 chars
- */
-export const base64EncodingChars =
+const base64EncodingChars =
     "./0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
 /**
- * @description Encodes 3 bytes into base64 encoding and appends the result to the StringBuffer.
- * @param {StringBuffer} result  The StringBuffer where the result will be appended.
+ * Encodes 3 bytes into base64 encoding and appends the result to the StringBuffer.
+ * @param {import("./types").StringBufferInterface} result  The StringBuffer where the result will be appended.
  * @param {number} c  The first byte to be encoded.
  * @param {number} [b] The second byte to be encoded (optional).
  * @param {number} [a] The third byte to be encoded (optional).
  * @returns {void} returns nothing
  */
-export function encode3Bytes(result, c, b, a) {
-    let n; // number of characters in encoding
-    let w; // 24-bit value with all the bytes in it
+function encode3Bytes(result, c, b, a) {
+    let n;
+    let w;
 
     if (a != null && b != null) {
         n = 4;
@@ -35,3 +30,5 @@ export function encode3Bytes(result, c, b, a) {
         w >>= 6;
     }
 }
+
+export { base64EncodingChars,encode3Bytes };

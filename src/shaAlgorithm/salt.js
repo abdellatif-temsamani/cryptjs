@@ -1,26 +1,26 @@
 import { randomBytes } from "crypto";
 
 /**
- * @description maximum length of salt
- * @type {16}
+ * maximum length of salt
+ * @type {import("../types").SaltLength}
  */
-export const maxSaltLength = 16;
+const maxSaltLength = 16;
 
 /**
+ * Generates a random salt of the specified length.
  * @param {number} [len] length of salt
  * @returns {string} generated salt
  */
-export function genSalt(len = maxSaltLength) {
+function genSalt(len = maxSaltLength) {
     return randomBytes(len).toString("hex");
 }
 
 /**
- * @description validate salt
+ * Validates and adjusts the provided salt to ensure it's valid.
  * @param {string | undefined} salt provided salt
  * @returns {string} a valid salt
  */
-export default function validateSalt(salt) {
-    // DONE: random salt
+function validateSalt(salt) {
     if (salt === undefined) return genSalt();
 
     if (salt.includes("$")) {
@@ -31,3 +31,6 @@ export default function validateSalt(salt) {
 
     return salt;
 }
+
+export default validateSalt;
+export { genSalt, maxSaltLength };

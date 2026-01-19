@@ -1,6 +1,6 @@
 import { describe, expect, test } from "@jest/globals";
 
-import sha512 from "../../sha512";
+import { sha512 } from "../../sha512.js";
 
 describe("SHA-512 SALT", () => {
     const salt = "w2323lfkhwrafflawf142sadjasjkafsalkfsajflkafjha";

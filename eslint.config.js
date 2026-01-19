@@ -7,10 +7,15 @@ import globals from "globals";
 export default [
     jsdoc.configs["flat/recommended"],
     {
-        files: ["./src/**/*.js", "./src/**/*.ts"],
+        files: ["./src/**/*.js"],
+        ignores: ["**/*.d.ts"],
         plugins: {
             "simple-import-sort": simpleImportSort,
             jsdoc,
+        },
+        languageOptions: {
+            sourceType: "module",
+            globals: globals.node,
         },
         rules: {
             "simple-import-sort/imports": "error",
@@ -18,6 +23,5 @@ export default [
             "jsdoc/require-description": "warn",
         },
     },
-    { languageOptions: { globals: globals.node } },
     pluginJs.configs.recommended,
 ];

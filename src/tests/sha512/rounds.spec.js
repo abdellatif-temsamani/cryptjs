@@ -1,16 +1,14 @@
 import { describe, expect, test } from "@jest/globals";
 
-import sha512 from "../../sha512";
-import { roundsValues } from "../../shaAlgorithm/rounds";
+import { sha512 } from "../../sha512.js";
+import { roundsValues } from "../../shaAlgorithm/rounds.js";
 
 describe("SHA-512 rounds", () => {
     const salt = "w2323lfkhwrafflawf142sadjasjkafsalkfsajflkafjha";
     const key = "123456789012345678901234567890";
 
     test("default rounds", () => {
-        expect(
-            sha512(key, { salt: salt, rounds: roundsValues.default }).hash,
-        ).toBe(
+        expect(sha512(key, { salt: salt, rounds: roundsValues.default }).hash).toBe(
             "NJ6qvLbGMBXhzoPWDicZP9ujenpX37WXo1xoHKbBNUpNRvLXAlRMrsclgBaoy9Gvegyn83RVkCDhb88ACcCn9.",
         );
     });

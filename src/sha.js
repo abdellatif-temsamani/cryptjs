@@ -3,7 +3,7 @@
  * Used for specifying the SHA algorithm in certain contexts, such as cryptographic operations.
  * @type {{ sha256: import("./types").ShaType; sha512: import("./types").ShaType; }}
  */
-export const shaType = {
+const shaType = {
     sha256: {
         name: "sha256",
         code: "5",
@@ -15,9 +15,9 @@ export const shaType = {
 };
 
 /**
- * @description Class representing a SHA object with its type, hash, salt, and salted hash.
+ * Class representing a SHA object with its type, hash, salt, and salted hash.
  */
-export default class Sha {
+class Sha {
     /** @type {import("./types").ShaType} */
     type;
     /** @type {string} */
@@ -26,7 +26,7 @@ export default class Sha {
     salt;
 
     /**
-     * @description Creates an instance of the Sha class.
+     * Creates an instance of the Sha class.
      * @param {import("./types").ShaType} algorithm type of algorithm
      * @param {string} salt The hash value.
      * @param {string} hash The salt value.
@@ -45,3 +45,5 @@ export default class Sha {
         return `$${this.type.code}$${this.salt}$${this.hash}`;
     }
 }
+
+export { Sha, shaType };
