@@ -1,3 +1,6 @@
+/**
+ * @type {import("../types").RoundsConfig}
+ */
 const roundsValues = {
     min: 1000,
     max: 99999,

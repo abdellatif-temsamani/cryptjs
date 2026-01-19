@@ -6,7 +6,7 @@ const StringBuffer = require("./StringBuffer.js");
 /**
  * sha-256 algorithm
  * @param {string} data data to hash
- * @param {object} [options] optional arugment
+ * @param {import("./types").ShaOptions} [options] optional arugment
  * @param {string} [options.salt] provided salt
  * @param {number} [options.rounds] provided rounds
  * @returns {Sha} Sha-512

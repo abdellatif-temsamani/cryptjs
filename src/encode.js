@@ -5,7 +5,7 @@ const base64EncodingChars =
 
 /**
  * Encodes 3 bytes into base64 encoding and appends the result to the StringBuffer.
- * @param {StringBuffer} result  The StringBuffer where the result will be appended.
+ * @param {import("./types").StringBufferInterface} result  The StringBuffer where the result will be appended.
  * @param {number} c  The first byte to be encoded.
  * @param {number} [b] The second byte to be encoded (optional).
  * @param {number} [a] The third byte to be encoded (optional).

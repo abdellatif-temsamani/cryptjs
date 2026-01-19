@@ -2,7 +2,7 @@ const { randomBytes } = require("crypto");
 
 /**
  * maximum length of salt
- * @type {16}
+ * @type {import("../types").SaltLength}
  */
 const maxSaltLength = 16;
 

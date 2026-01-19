@@ -6,12 +6,12 @@ const { hashBuffer, toUtf16Bytes } = require("./utils.js");
 
 /**
  * Sha algorithm
- * @param {import("../types.js").ShaType} algorithm either sha-256 or sha-512
+ * @param {import("../types").ShaType} algorithm either sha-256 or sha-512
  * @param {string} data data to hash
- * @param {32 | 64} blockSize blocksize
+ * @param {import("../types").ShaBlockSize} blockSize blocksize
  * @param {number | undefined} providedRounds provided rounds
  * @param {string | undefined} providedSalt provided salt
- * @returns {{ hashSeq:number[]; salt: string; }} returns hash sequence, salt
+ * @returns {import("../types").ShaAlgorithmResult} returns hash sequence, salt
  */
 function shaAlgorithm(
     algorithm,
