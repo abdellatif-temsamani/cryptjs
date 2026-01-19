@@ -1,19 +1,15 @@
-/**
- * @constant
- * @readonly
- * @type {{min: 1000; max: 99999; default: 5000}}
- */
-export const roundsValues = {
+const roundsValues = {
     min: 1000,
     max: 99999,
     default: 5000,
 };
 
 /**
+ * Validates and adjusts the number of rounds for hashing to ensure it's within acceptable bounds.
  * @param {number | undefined} rounds rounds for hashing
  * @returns {number} a valid rounds
  */
-export default function validateRounds(rounds) {
+function validateRounds(rounds) {
     if (rounds === undefined) return roundsValues.default;
 
     if (rounds <= roundsValues.min) return roundsValues.min;
@@ -22,3 +18,6 @@ export default function validateRounds(rounds) {
 
     return rounds;
 }
+
+module.exports = validateRounds;
+module.exports.roundsValues = roundsValues;
