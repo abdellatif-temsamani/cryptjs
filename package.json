@@ -1,6 +1,6 @@
 {
     "name": "@abdellatif.dev/cryptjs",
-    "version": "0.6.0-1",
+    "version": "1.0.0",
     "description": "A JavaScript/TypeScript library that brings cryptographic functionality from Dart to the web",
     "type": "module",
     "main": "src/index.js",
